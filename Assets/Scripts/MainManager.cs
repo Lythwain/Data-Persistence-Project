@@ -18,7 +18,6 @@ public class MainManager : MonoBehaviour
     
     private bool m_GameOver = false;
 
-    
     // Start is called before the first frame update
     void Start()
     {
@@ -40,8 +39,14 @@ public class MainManager : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene(0,LoadSceneMode.Single);
+            return;
+        }
         if (!m_Started)
         {
+            
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 m_Started = true;
